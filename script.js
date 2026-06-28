@@ -130,20 +130,6 @@ const counterObserver = new IntersectionObserver(entries => {
 const statsEl = document.querySelector('.hero__stats');
 if (statsEl) counterObserver.observe(statsEl);
 
-/* --- Skill Bar Animation ---------------------------------- */
-const skillObserver = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.querySelectorAll('.skill-bar__fill').forEach(bar => {
-        bar.style.width = bar.dataset.width + '%';
-      });
-      skillObserver.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.3 });
-
-const skillsSection = document.getElementById('skills');
-if (skillsSection) skillObserver.observe(skillsSection);
 
 /* --- Hero Particle Canvas --------------------------------- */
 (function initCanvas() {
