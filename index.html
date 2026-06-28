@@ -1,0 +1,453 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nuhu Musah — Software Developer</title>
+  <meta name="description" content="Nuhu Musah — Software Developer building clean, performant, user-friendly software." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- CURSOR -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#hero" class="nav__logo">
+        <span class="logo-bracket">&lt;</span>NM<span class="logo-bracket">/&gt;</span>
+      </a>
+      <nav class="nav__links">
+        <a href="#about" class="nav-link"><span class="nav-link__num"></span>About</a>
+        <a href="#projects" class="nav-link"><span class="nav-link__num"></span>Projects</a>
+        <a href="#skills" class="nav-link"><span class="nav-link__num"></span>Skills</a>
+        <a href="#contact" class="nav-link"><span class="nav-link__num"></span>Contact</a>
+        <a href="resume.html" target="_blank" class="btn btn--nav">Resume</a>
+      </nav>
+      <button class="burger" id="burger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav__mobile" id="mobileMenu">
+      <a href="#about" class="mobile-link" data-num="01">About</a>
+      <a href="#projects" class="mobile-link" data-num="02">Projects</a>
+      <a href="#skills" class="mobile-link" data-num="03">Skills</a>
+      <a href="#contact" class="mobile-link" data-num="04">Contact</a>
+    </div>
+  </header>
+
+  <!-- SOCIAL SIDEBAR -->
+  <aside class="sidebar sidebar--left">
+    <a href="https://github.com/NullPointer3" target="_blank" rel="noopener" aria-label="GitHub">
+      <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58v-2.03c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.13 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.21.7.82.58C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+    </a>
+    <a href="https://linkedin.com/in/nuhu-musah-ibrahim" target="_blank" rel="noopener" aria-label="LinkedIn">
+      <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM6.9 20.45H3.56V9H6.9v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45C23.21 24 24 23.23 24 22.27V1.73C24 .77 23.21 0 22.22 0z"/></svg>
+    </a>
+    <a href="https://twitter.com/" target="_blank" rel="noopener" aria-label="Twitter">
+      <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+    </a>
+    <div class="sidebar__line"></div>
+  </aside>
+
+  <aside class="sidebar sidebar--right">
+    <a href="mailto:nuhumusah874@gmail.com" class="sidebar__email">nuhumusah874@gmail.com</a>
+    <div class="sidebar__line"></div>
+  </aside>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <canvas class="hero__canvas" id="heroCanvas"></canvas>
+      <div class="hero__content">
+        <p class="hero__tag reveal-up">Hi, my name is</p>
+        <h1 class="hero__name reveal-up">Nuhu Musah<span class="cursor-blink">.</span></h1>
+        <h2 class="hero__subtitle reveal-up">
+          I build things for the <span class="gradient-text" id="typewriter"></span>
+        </h2>
+        <p class="hero__desc reveal-up">
+          I'm a software developer specialising in crafting exceptional digital experiences.
+          Currently focused on building accessible, human-centred products that make a difference.
+        </p>
+        <div class="hero__cta reveal-up">
+          <a href="#projects" class="btn btn--glow">View My Work <span class="btn__arrow">&#8594;</span></a>
+          <a href="#contact" class="btn btn--ghost">Let's Talk</a>
+        </div>
+        <div class="hero__stats reveal-up">
+          <div class="stat">
+            <span class="stat__num" data-target="3">0</span><span class="stat__plus">+</span>
+            <span class="stat__label">Years Coding</span>
+          </div>
+          <div class="stat__divider"></div>
+          <div class="stat">
+            <span class="stat__num" data-target="20">0</span><span class="stat__plus">+</span>
+            <span class="stat__label">Projects Built</span>
+          </div>
+          <div class="stat__divider"></div>
+          <div class="stat">
+            <span class="stat__num" data-target="10">0</span><span class="stat__plus">+</span>
+            <span class="stat__label">Happy Clients</span>
+          </div>
+        </div>
+      </div>
+      <a href="#about" class="hero__scroll-cue" aria-label="Scroll down">
+        <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+        <span>Scroll</span>
+      </a>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about section" id="about">
+      <div class="container">
+        <p class="section-eyebrow reveal-up">01. Who I Am</p>
+        <h2 class="section-title reveal-up">About <span class="gradient-text">Me</span></h2>
+        <div class="about__grid">
+          <div class="about__text reveal-up">
+            <p>
+              Hello! I'm Nuhu — a software developer who loves turning complex problems into
+              clean, elegant solutions. My journey into coding started with curiosity and has
+              grown into a genuine passion for the craft.
+            </p>
+            <p>
+              I care deeply about the details — from pixel-perfect UIs to well-architected
+              backends. I believe great software is both technically sound and a joy to use.
+            </p>
+            <p>
+              Outside of work, I explore new technologies, contribute to open-source, and
+              constantly look for ways to grow as a developer and a problem solver.
+            </p>
+            <p>Here are a few technologies I've been working with recently:</p>
+            <ul class="about__tech-list">
+              <li>JavaScript (ES2024)</li>
+              <li>React &amp; Next.js</li>
+              <li>Node.js &amp; Express</li>
+              <li>Python &amp; FastAPI</li>
+              <li>PostgreSQL &amp; MongoDB</li>
+              <li>Docker &amp; AWS</li>
+            </ul>
+            <a href="resume.html" target="_blank" class="btn btn--glow" style="margin-top:2rem; display:inline-flex;">
+              View Resume <span style="margin-left:0.25rem">&#8599;</span>
+            </a>
+          </div>
+          <div class="about__photo reveal-up">
+            <div class="photo-frame">
+              <div class="photo-inner">
+                <div class="avatar-letters">NM</div>
+              </div>
+              <div class="photo-border"></div>
+              <div class="photo-dot photo-dot--1"></div>
+              <div class="photo-dot photo-dot--2"></div>
+              <div class="photo-dot photo-dot--3"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="projects section" id="projects">
+      <div class="container">
+        <p class="section-eyebrow reveal-up">02. What I've Built</p>
+        <h2 class="section-title reveal-up">Featured <span class="gradient-text">Projects</span></h2>
+        <div class="projects__grid">
+
+          <article class="project-card reveal-up" data-index="1">
+            <div class="project-card__glow"></div>
+            <div class="project-card__inner">
+              <div class="project-card__top">
+                <div class="project-card__folder">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="36" height="36"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+                </div>
+                <div class="project-card__links">
+                  <a href="#" aria-label="GitHub" title="View source">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58v-2.03c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.13 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.21.7.82.58C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                  </a>
+                  <a href="#" aria-label="Live demo" title="Live demo">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                  </a>
+                </div>
+              </div>
+              <h3 class="project-card__title">Task Manager App</h3>
+              <p class="project-card__desc">
+                A full-featured task management application with real-time collaboration,
+                drag-and-drop boards, deadline tracking, and role-based permissions for teams.
+              </p>
+              <footer class="project-card__footer">
+                <ul class="project-card__tags">
+                  <li>React</li><li>Node.js</li><li>MongoDB</li><li>Socket.io</li>
+                </ul>
+              </footer>
+            </div>
+          </article>
+
+          <article class="project-card reveal-up" data-index="2">
+            <div class="project-card__glow"></div>
+            <div class="project-card__inner">
+              <div class="project-card__top">
+                <div class="project-card__folder">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="36" height="36"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+                </div>
+                <div class="project-card__links">
+                  <a href="#" aria-label="GitHub" title="View source">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58v-2.03c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.13 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.21.7.82.58C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                  </a>
+                  <a href="#" aria-label="Live demo" title="Live demo">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                  </a>
+                </div>
+              </div>
+              <h3 class="project-card__title">Weather Dashboard</h3>
+              <p class="project-card__desc">
+                A responsive weather platform showing live conditions and a 7-day forecast.
+                Features geolocation, city search, animated weather icons, and dark/light mode.
+              </p>
+              <footer class="project-card__footer">
+                <ul class="project-card__tags">
+                  <li>JavaScript</li><li>REST API</li><li>Chart.js</li><li>Vite</li>
+                </ul>
+              </footer>
+            </div>
+          </article>
+
+          <article class="project-card reveal-up" data-index="3">
+            <div class="project-card__glow"></div>
+            <div class="project-card__inner">
+              <div class="project-card__top">
+                <div class="project-card__folder">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="36" height="36"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+                </div>
+                <div class="project-card__links">
+                  <a href="#" aria-label="GitHub" title="View source">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58v-2.03c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.13 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.21.7.82.58C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                  </a>
+                  <a href="#" aria-label="Live demo" title="Live demo">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                  </a>
+                </div>
+              </div>
+              <h3 class="project-card__title">Analytics Platform</h3>
+              <p class="project-card__desc">
+                A business intelligence dashboard for visualising KPIs with interactive charts,
+                custom date ranges, PDF/CSV export, and a real-time notification system.
+              </p>
+              <footer class="project-card__footer">
+                <ul class="project-card__tags">
+                  <li>Python</li><li>FastAPI</li><li>React</li><li>PostgreSQL</li>
+                </ul>
+              </footer>
+            </div>
+          </article>
+
+          <article class="project-card reveal-up" data-index="4">
+            <div class="project-card__glow"></div>
+            <div class="project-card__inner">
+              <div class="project-card__top">
+                <div class="project-card__folder">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="36" height="36"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+                </div>
+                <div class="project-card__links">
+                  <a href="#" aria-label="GitHub" title="View source">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58v-2.03c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.13 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.21.7.82.58C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                  </a>
+                  <a href="#" aria-label="Live demo" title="Live demo">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                  </a>
+                </div>
+              </div>
+              <h3 class="project-card__title">E-Commerce API</h3>
+              <p class="project-card__desc">
+                A scalable RESTful e-commerce backend with JWT auth, Stripe payments,
+                inventory management, order tracking, and automated email notifications.
+              </p>
+              <footer class="project-card__footer">
+                <ul class="project-card__tags">
+                  <li>Node.js</li><li>Express</li><li>MySQL</li><li>Stripe</li>
+                </ul>
+              </footer>
+            </div>
+          </article>
+
+          <article class="project-card reveal-up" data-index="5">
+            <div class="project-card__glow"></div>
+            <div class="project-card__inner">
+              <div class="project-card__top">
+                <div class="project-card__folder">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="36" height="36"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+                </div>
+                <div class="project-card__links">
+                  <a href="#" aria-label="GitHub" title="View source">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58v-2.03c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.13 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.21.7.82.58C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                  </a>
+                  <a href="#" aria-label="Live demo" title="Live demo">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                  </a>
+                </div>
+              </div>
+              <h3 class="project-card__title">AI Chat Interface</h3>
+              <p class="project-card__desc">
+                A sleek AI chat application with streaming responses, conversation history,
+                prompt templates, dark/light theme, and export-to-markdown functionality.
+              </p>
+              <footer class="project-card__footer">
+                <ul class="project-card__tags">
+                  <li>React</li><li>TypeScript</li><li>OpenAI API</li><li>Tailwind</li>
+                </ul>
+              </footer>
+            </div>
+          </article>
+
+          <article class="project-card reveal-up" data-index="6">
+            <div class="project-card__glow"></div>
+            <div class="project-card__inner">
+              <div class="project-card__top">
+                <div class="project-card__folder">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="36" height="36"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+                </div>
+                <div class="project-card__links">
+                  <a href="#" aria-label="GitHub" title="View source">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58v-2.03c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.13 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.21.7.82.58C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                  </a>
+                  <a href="#" aria-label="Live demo" title="Live demo">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                  </a>
+                </div>
+              </div>
+              <h3 class="project-card__title">Dev Blog Platform</h3>
+              <p class="project-card__desc">
+                A content-rich blog built with Next.js and MDX — featuring syntax highlighting,
+                reading progress, table of contents, search, and newsletter subscription.
+              </p>
+              <footer class="project-card__footer">
+                <ul class="project-card__tags">
+                  <li>Next.js</li><li>MDX</li><li>Prisma</li><li>Vercel</li>
+                </ul>
+              </footer>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="skills section" id="skills">
+      <div class="container">
+        <p class="section-eyebrow reveal-up">03. What I Work With</p>
+        <h2 class="section-title reveal-up">My <span class="gradient-text">Skills</span></h2>
+        <div class="skills__layout">
+          <div class="skills__bars reveal-up">
+            <div class="skill-bar">
+              <div class="skill-bar__header">
+                <span>JavaScript / TypeScript</span><span class="skill-bar__pct">92%</span>
+              </div>
+              <div class="skill-bar__track"><div class="skill-bar__fill" data-width="92"></div></div>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-bar__header">
+                <span>React / Next.js</span><span class="skill-bar__pct">88%</span>
+              </div>
+              <div class="skill-bar__track"><div class="skill-bar__fill" data-width="88"></div></div>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-bar__header">
+                <span>Node.js / Python</span><span class="skill-bar__pct">85%</span>
+              </div>
+              <div class="skill-bar__track"><div class="skill-bar__fill" data-width="85"></div></div>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-bar__header">
+                <span>SQL / NoSQL Databases</span><span class="skill-bar__pct">80%</span>
+              </div>
+              <div class="skill-bar__track"><div class="skill-bar__fill" data-width="80"></div></div>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-bar__header">
+                <span>Docker / Cloud (AWS)</span><span class="skill-bar__pct">72%</span>
+              </div>
+              <div class="skill-bar__track"><div class="skill-bar__fill" data-width="72"></div></div>
+            </div>
+          </div>
+          <div class="skills__pills-section reveal-up">
+            <div class="skill-group">
+              <h3>Frontend</h3>
+              <div class="pill-grid">
+                <span class="pill">HTML5</span><span class="pill">CSS3</span>
+                <span class="pill">JavaScript</span><span class="pill">TypeScript</span>
+                <span class="pill">React</span><span class="pill">Next.js</span>
+                <span class="pill">Tailwind</span><span class="pill">Framer Motion</span>
+              </div>
+            </div>
+            <div class="skill-group">
+              <h3>Backend &amp; Data</h3>
+              <div class="pill-grid">
+                <span class="pill">Node.js</span><span class="pill">Python</span>
+                <span class="pill">FastAPI</span><span class="pill">Express</span>
+                <span class="pill">GraphQL</span><span class="pill">PostgreSQL</span>
+                <span class="pill">MongoDB</span><span class="pill">Redis</span>
+              </div>
+            </div>
+            <div class="skill-group">
+              <h3>Tools</h3>
+              <div class="pill-grid">
+                <span class="pill">Git</span><span class="pill">Docker</span>
+                <span class="pill">AWS</span><span class="pill">Linux</span>
+                <span class="pill">CI/CD</span><span class="pill">Figma</span>
+                <span class="pill">Jest</span><span class="pill">Vitest</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact section" id="contact">
+      <div class="container">
+        <p class="section-eyebrow reveal-up">04. What's Next</p>
+        <h2 class="section-title reveal-up">Get In <span class="gradient-text">Touch</span></h2>
+        <p class="contact__sub reveal-up">
+          I'm currently open to new opportunities. Whether you have a project,
+          a question, or just want to say hi — I'll do my best to get back to you!
+        </p>
+        <a href="mailto:nuhumusah874@gmail.com" class="btn btn--glow btn--xl reveal-up">
+          Say Hello <span class="btn__arrow">&#8594;</span>
+        </a>
+        <div class="contact__social reveal-up">
+          <a href="https://github.com/" target="_blank" rel="noopener" class="social-pill">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58v-2.03c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.13 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.21.7.82.58C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            GitHub
+          </a>
+          <a href="https://linkedin.com/in/" target="_blank" rel="noopener" class="social-pill">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM6.9 20.45H3.56V9H6.9v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45C23.21 24 24 23.23 24 22.27V1.73C24 .77 23.21 0 22.22 0z"/></svg>
+            LinkedIn
+          </a>
+          <a href="https://twitter.com/" target="_blank" rel="noopener" class="social-pill">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            Twitter
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>
+      Designed &amp; built by <span class="gradient-text">Nuhu Musah</span>
+      &nbsp;&bull;&nbsp; &copy; <span id="year"></span>
+    </p>
+    <p class="footer__sub">Built with HTML, CSS &amp; Vanilla JS</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
